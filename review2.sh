@@ -12,17 +12,18 @@ then
 	echo "EVEN number"
 	echo "Number is not a prime number"
 else
-	echo "ODD"
-	i=2
-	f=0
-	for (( i=2; i<$num; i++ ))
+ echo "ODD number"
+	for (( i=2; i<=$num / 2; i++ ))
 	do
-		check=$(( $num % 2 ))
-		if [ $check -eq 0 ]
+		if [ $(( $num % $i )) -eq 0 ]
 		then 
-			echo "Number is prime"
-		else
-			echo " "
+
+			echo "NOT PRIME"
+			exit
 		fi
+
+		
 	done
+	echo "PRIME NUMBER"
 fi
+
